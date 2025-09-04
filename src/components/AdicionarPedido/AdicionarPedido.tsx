@@ -45,11 +45,11 @@ const AdicionarPedido: React.FC<AdicionarPedidoProps> = ({ mesaId, onSalvarPedid
     if (itemSelecionadoId !== '' && quantidade > 0) {
       const itemDoCardapio = cardapio.find(item => item.id === itemSelecionadoId);
       if (itemDoCardapio) {
-        // Verifica se o item já existe no pedido
+        
         const itemExistente = itensPedido.find(item => item.id === itemSelecionadoId);
 
         if (itemExistente) {
-          // Se existe, atualiza a quantidade
+          
           setItensPedido(
             itensPedido.map(item =>
               item.id === itemSelecionadoId
@@ -58,7 +58,7 @@ const AdicionarPedido: React.FC<AdicionarPedidoProps> = ({ mesaId, onSalvarPedid
             )
           );
         } else {
-          // Se não existe, adiciona um novo item
+          
           const novoItem: ItemPedido = {
             ...itemDoCardapio,
             quantidade: quantidade,
@@ -66,7 +66,7 @@ const AdicionarPedido: React.FC<AdicionarPedidoProps> = ({ mesaId, onSalvarPedid
           setItensPedido([...itensPedido, novoItem]);
         }
         
-        // Resetar os estados de seleção
+        
         setItemSelecionadoId('');
         setQuantidade(1);
         setTermoPesquisa('');

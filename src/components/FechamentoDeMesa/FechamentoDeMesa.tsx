@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Container, Card, ListGroup, Form, Button, Row, Col } from 'react-bootstrap';
 // import './FechamentoDeMesa.css';
 
-// Reutilizando os tipos de dados do componente AdicionarPedido
+
 type ItemPedido = {
   id: number;
   nome: string;
@@ -10,11 +10,11 @@ type ItemPedido = {
   preco: number;
 };
 
-// Props que o componente receberá da tela de Gerência de Mesa
+
 interface FechamentoDeMesaProps {
   mesaId: number;
   itensConsumidos: ItemPedido[];
-  // Função para notificar a tela superior de que a mesa foi fechada
+
   onFecharMesa: (mesaId: number) => void;
   onCancelar: () => void;
 }

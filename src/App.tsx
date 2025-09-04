@@ -3,7 +3,7 @@ import AdicionarPedido from './components/AdicionarPedido/AdicionarPedido';
 import FechamentoDeMesa from './components/FechamentoDeMesa/FechamentoDeMesa';
 import './App.css';
 
-// Reutilizando os tipos de dados
+
 type ItemPedido = {
   id: number;
   nome: string;
@@ -11,14 +11,14 @@ type ItemPedido = {
   preco: number;
 };
 
-// Tipo para representar o estado de uma mesa
+
 type Mesa = {
   id: number;
   status: 'livre' | 'ocupada';
   pedidos: ItemPedido[];
 };
 
-// Dados de mesas iniciais
+
 const mesasIniciais: Mesa[] = [
   { id: 1, status: 'ocupada', pedidos: [{ id: 1, nome: 'Hambúrguer Clássico', quantidade: 2, preco: 25.00 }] },
   { id: 2, status: 'livre', pedidos: [] },
@@ -38,7 +38,7 @@ const App: React.FC = () => {
       alert(`Mesa ${mesaId} ocupada. Agora você pode adicionar um pedido.`);
       setModo('adicionar-pedido');
     } else {
-      // Se a mesa já está ocupada, damos a opção de adicionar pedido
+
       setModo('adicionar-pedido');
     }
   };
@@ -46,32 +46,32 @@ const App: React.FC = () => {
     setModo ('gerencia');
     setMesaSelecionada(null);
   }  
-  // Função para adicionar um novo pedido à mesa
+
   const handleSalvarPedido = (mesaId: number, novosItens: ItemPedido[]) => {
     setMesas(mesas.map(mesa =>
       mesa.id === mesaId
         ? { ...mesa, status: 'ocupada', pedidos: [...mesa.pedidos, ...novosItens] }
         : mesa
     ));
-    // Volta para a tela de gerência de mesas
+
     setModo('gerencia');
     setMesaSelecionada(null);
     alert('Pedido adicionado com sucesso!');
   };
 
-  // Função para fechar a mesa
+
   const handleFecharMesa = (mesaId: number) => {
     setMesas(mesas.map(mesa =>
       mesa.id === mesaId
         ? { ...mesa, status: 'livre', pedidos: [] }
         : mesa
     ));
-    // Volta para a tela de gerência
+
     setModo('gerencia');
     setMesaSelecionada(null);
   };
   
-  // Encontra a mesa selecionada para passar os dados
+
   const mesaAtual = mesas.find(m => m.id === mesaSelecionada);
 
   return (
@@ -102,9 +102,8 @@ const App: React.FC = () => {
       {modo === 'adicionar-pedido' && mesaAtual && (
         <AdicionarPedido 
           mesaId={mesaAtual.id}
-          // Lógica para enviar o novo pedido para a tela de gerenciamento
           onSalvarPedido={(novosItens) => handleSalvarPedido(mesaAtual.id, novosItens)} 
-          onCancelar={handleCancelarAcao} // <--- Passando a nova função
+          onCancelar={handleCancelarAcao} 
         />
       )}
 
