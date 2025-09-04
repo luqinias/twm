@@ -1,0 +1,79 @@
+.app-container {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-color: #f4f4f4;
+  min-height: 100vh;
+}
+
+.titulo-principal {
+  text-align: center;
+  color: #333;
+  margin-bottom: 40px;
+}
+
+.mesas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.mesa {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.mesa:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.mesa.livre {
+  background-color: #e6f7ff;
+  border-color: #91d5ff;
+}
+
+.mesa.ocupada {
+  background-color: #fff0f6;
+  border-color: #ffadd2;
+}
+
+.mesa h3 {
+  margin: 0 0 10px;
+  color: #555;
+}
+
+.mesa p {
+  margin: 0;
+  font-weight: bold;
+}
+
+.mesa.ocupada p {
+  color: #eb2f96;
+}
+
+.mesa.livre p {
+  color: #1890ff;
+}
+
+.mesa button {
+  margin-top: 15px;
+  padding: 8px 12px;
+  background-color: #ff4d4f;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.mesa button:hover {
+  background-color: #d9363e;
+}

@@ -1,0 +1,199 @@
+/* ... código CSS anterior ... */
+
+/* Estilização da lista de itens do pedido */
+.lista-pedido {
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+.lista-pedido h3 {
+    margin-bottom: 12px;
+    color: #333;
+}
+
+.lista-pedido ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.lista-pedido li {
+    background-color: #fff;
+    border: 1px solid #e9e9e9;
+    padding: 12px 16px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.lista-pedido li span:first-child {
+    flex-grow: 1;
+}
+
+.item-acoes {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.item-acoes input[type="number"] {
+    width: 60px;
+    padding: 4px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.item-acoes button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: background-color 0.3s ease;
+}
+
+.item-acoes button:hover {
+    background-color: #c82333;
+}
+
+.valor-total {
+    text-align: right;
+    margin-top: 20px;
+    font-size: 1.25rem;
+    color: #333;
+}
+
+.salvar-pedido-btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    margin-top: 24px;
+    transition: background-color 0.3s ease;
+}
+
+.salvar-pedido-btn:hover {
+    background-color: #0056b3;
+}
+
+.botoes-acao {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    margin-top: 24px;
+}
+
+.salvar-pedido-btn,
+.cancelar-btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.salvar-pedido-btn {
+    background-color: #007bff;
+    color: white;
+}
+
+.salvar-pedido-btn:hover {
+    background-color: #1e9400;
+}
+
+.cancelar-btn {
+    background-color:  #ca2222;
+    color: white;
+}
+
+.cancelar-btn:hover {
+    background-color: #d8cc1d;
+}
+
+/* ... seu CSS existente ... */
+
+.selecao-itens {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 24px;
+    position: relative; /* Para posicionar a lista de resultados */
+}
+
+.selecao-itens label {
+    font-weight: bold;
+    color: #555;
+}
+
+.selecao-itens input[type="text"],
+.selecao-itens input[type="number"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    width: 100%; /* Garante que o input ocupe a largura total */
+    box-sizing: border-box; /* Inclui padding e borda na largura total */
+}
+
+
+.resultados-busca {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 65px; /* Ajuste a posição abaixo do input */
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-top: none;
+    border-radius: 0 0 4px 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.resultados-busca li {
+    padding: 12px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+}
+
+.resultados-busca li:last-child {
+    border-bottom: none;
+}
+
+.resultados-busca li:hover {
+    background-color: #f0f0f0;
+}
+
+.selecao-itens button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    width: 100%; /* Garante que o botão ocupe a largura total */
+}
+
+.selecao-itens button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
